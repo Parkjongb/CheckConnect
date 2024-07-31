@@ -138,6 +138,7 @@ void check_connect()
 // 실행 결과
 void result_connect()
 {
+	// 단선 / 쇼트 ERROR_LED ON
 	if(error_count > 0)
 	{
 		HAL_TIM_Base_Stop(&htim2);
@@ -148,6 +149,7 @@ void result_connect()
 		error_count=0;
 
 	}
+	// 정상 LED ON
 	else if (test_state ==1)
 	{
 		HAL_GPIO_WritePin(ERROR_LED_GPIO_Port,ERROR_LED_Pin,1);
